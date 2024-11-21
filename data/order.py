@@ -31,7 +31,7 @@ class Order(db.Model):
 
     @property
     def date_placed_local(self):
-        return self.date_placed.astimezone(local_timezone)
+        return self.date_placed_local.astimezone(local_timezone)
 
     @property
     def date_processed_local(self):
