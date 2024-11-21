@@ -9,6 +9,9 @@ from scheduled_jobs import initialise_scheduled_jobs
 from products import create_product_download
 import requests
 logging.basicConfig(level=logging.INFO)
+from azure.monitor.opentelemetry import configure_azure_monitor
+configure_azure_monitor()
+
 app = Flask(__name__)
 app.config.from_object(Config)
 
@@ -76,3 +79,4 @@ def set_scenario():
 
 if __name__ == "__main__":
     app.run()
+    
